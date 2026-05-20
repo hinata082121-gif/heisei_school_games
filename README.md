@@ -56,8 +56,9 @@ npm run start
 
 ## AdSenseについて
 
-現時点では本番AdSenseコードは未導入です。
-広告表示制御とAdSlotの土台のみ実装しています。
+現時点では本番広告枠の表示は未有効です。
+`NEXT_PUBLIC_ADSENSE_CLIENT_ID` が設定されている場合のみ、AdSenseサイト接続確認用のscriptを読み込みます。
+広告表示制御とAdSlotの土台は実装済みです。
 
 ## SNSについて
 

@@ -2,10 +2,11 @@
 
 ## 現在の状態
 
-- Phase 4では本番AdSenseコードは未導入
+- 本番広告枠の表示は未有効
+- AdSenseサイト接続確認用のscriptは、NEXT_PUBLIC_ADSENSE_CLIENT_ID が設定されている場合のみ読み込み
 - AdSlotコンポーネントと広告表示制御のみ実装
 - NEXT_PUBLIC_ADSENSE_ENABLED=false が初期値
-- publisher ID は未設定
+- publisher ID は NEXT_PUBLIC_ADSENSE_CLIENT_ID で管理
 
 ## 広告表示許可ページ
 
@@ -36,7 +37,6 @@
 - AdSense審査通過後に publisher ID を設定する
 - NEXT_PUBLIC_ADSENSE_CLIENT_ID に ca-pub- から始まるIDを設定する
 - NEXT_PUBLIC_ADSENSE_ENABLED=true にする
-- AdSense script の読み込みを実装する
 - ads.txt が必要になった場合は、Google AdSense管理画面の指示に従って public/ads.txt を追加する
 - privacyページの文面を「導入予定」から「導入中」に変更する
 - 実機スマホで広告位置を確認する

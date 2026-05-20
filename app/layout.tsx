@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import type { ReactNode } from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { defaultDescription, defaultTitle, getSiteUrl, siteName } from "@/lib/site";
 import "./globals.css";
+
+const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID?.trim();
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
@@ -36,6 +39,14 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className="min-h-screen font-sans antialiased">
+        {adsenseClientId ? (
+          <Script
+            async
+            crossOrigin="anonymous"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
+            strategy="beforeInteractive"
+          />
+        ) : null}
         <Header />
         <main>{children}</main>
         <Footer />

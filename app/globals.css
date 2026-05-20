@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --school-ink: #28231d;
+  --school-paper: #fff9e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--school-ink);
+  background:
+    linear-gradient(90deg, rgba(47, 94, 135, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(180, 68, 54, 0.06) 1px, transparent 1px),
+    #f7edd5;
+  background-size: 28px 28px, 28px 28px, auto;
+}
+
+::selection {
+  background: #d6a63d;
+  color: #28231d;
+}
+
+@layer components {
+  .pixel-frame {
+    border: 2px solid #28231d;
+    box-shadow: 4px 4px 0 #28231d;
+  }
+
+  .pixel-frame-sm {
+    border: 2px solid #28231d;
+    box-shadow: 3px 3px 0 #28231d;
+  }
+
+  .chalkboard {
+    border: 7px solid #7b5234;
+    background:
+      radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.08) 0 1px, transparent 2px),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.07), transparent 40%),
+      #173d34;
+    color: #f7f1dc;
+  }
+
+  .chalk-text {
+    color: #f7f1dc;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.14);
+  }
+
+  .notebook-panel {
+    background:
+      linear-gradient(90deg, rgba(180, 68, 54, 0.25) 0 2px, transparent 2px 100%),
+      repeating-linear-gradient(180deg, #fff9e8 0 30px, #c7d8e6 31px, #fff9e8 32px);
+    background-position: 22px 0, 0 0;
+  }
+
+  .hallway-floor {
+    background:
+      linear-gradient(90deg, rgba(40, 35, 29, 0.12) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(40, 35, 29, 0.12) 1px, transparent 1px),
+      linear-gradient(180deg, #f3dcae 0%, #d49b62 100%);
+    background-size: 36px 36px, 36px 36px, auto;
+  }
+
+  .lunch-counter {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0 12%, transparent 12%),
+      repeating-linear-gradient(90deg, #d8dee3 0 28px, #b7c1c8 28px 30px);
+  }
+
+  .bulletin-board {
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      #9f6b3a;
+    background-size: 22px 22px;
+  }
+
+  .pixel-button {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #28231d;
+    background: #d6a63d;
+    padding: 0.75rem 1rem;
+    color: #28231d;
+    font-weight: 800;
+    box-shadow: 3px 3px 0 #28231d;
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease,
+      background-color 150ms ease;
+  }
+
+  .pixel-button:hover,
+  .pixel-button:focus-visible {
+    background: #f0c95b;
+    box-shadow: 1px 1px 0 #28231d;
+    transform: translate(2px, 2px);
+  }
+
+  .pixel-button-secondary {
+    background: #fff9e8;
+  }
+
+  .pixel-button-disabled {
+    cursor: not-allowed;
+    background: #c2b69e;
+    color: #5e5547;
+    box-shadow: 3px 3px 0 #5e5547;
+  }
+}

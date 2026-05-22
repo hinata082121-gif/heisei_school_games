@@ -17,6 +17,7 @@ const allowedExactPaths = new Set([
   "/games",
   "/games/chime-dash",
   "/games/kyusyoku-okawari",
+  "/games/eraser-battle",
   "/guides",
   "/blog",
 ]);

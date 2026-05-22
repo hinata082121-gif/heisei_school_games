@@ -15,7 +15,7 @@ export function SchoolHero() {
             平成の学校あるあるを、16bitブラウザゲームに。
           </p>
           <p className="mt-4 max-w-2xl text-base leading-8 text-chalk/90 sm:text-lg">
-            チャイム、給食、廊下、休み時間。
+            チャイム、給食、廊下、消しゴム落とし。
             <br />
             あの頃の小さな事件を、スマホで遊べるミニゲームにしました。
           </p>
@@ -54,7 +54,7 @@ export function SchoolHero() {
                   <span className="font-mono text-xs font-black">給食</span>
                 </div>
                 <div className="border-2 border-ink bg-paper p-3">
-                  <span className="font-mono text-xs font-black">掲示板</span>
+                  <span className="font-mono text-xs font-black">机上決戦</span>
                 </div>
               </div>
             </div>

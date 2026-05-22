@@ -15,6 +15,10 @@ const roomVisuals: Record<RoomTheme, { base: string; label: string }> = {
     base: "lunch-counter",
     label: "給食室と配膳台をイメージしたエリア",
   },
+  desk: {
+    base: "desk-top",
+    label: "学校机と消しゴム落としをイメージしたエリア",
+  },
 };
 
 export function GameRoomCard({ game }: GameRoomCardProps) {
@@ -33,7 +37,7 @@ export function GameRoomCard({ game }: GameRoomCardProps) {
               {game.areaName}
             </span>
             <span className="border-2 border-ink bg-board px-2 py-1 font-mono text-xs font-bold text-chalk">
-              16BIT
+              第{game.order}弾
             </span>
           </div>
           <div className="grid grid-cols-3 gap-2" aria-hidden="true">
@@ -46,14 +50,31 @@ export function GameRoomCard({ game }: GameRoomCardProps) {
 
       <div className="pixel-frame bg-paper p-5 sm:p-6">
         <p className="mb-2 font-mono text-sm font-bold text-school-blue">
-          {game.areaName}
+          第{game.order}弾 / {game.areaName}
         </p>
         <h2 className="text-2xl font-black leading-tight sm:text-3xl">
           {game.title}
         </h2>
+        <p className="mt-1 font-mono text-sm font-black text-ink/70">
+          {game.subtitle}
+        </p>
         <p className="mt-4 whitespace-pre-line text-base leading-8 sm:text-lg">
           {game.description}
         </p>
+        <dl className="mt-5 grid gap-2 text-sm font-bold sm:grid-cols-3">
+          <div className="pixel-frame-sm bg-white/70 px-3 py-2">
+            <dt className="font-mono text-xs text-school-blue">時間</dt>
+            <dd>{game.playTime}</dd>
+          </div>
+          <div className="pixel-frame-sm bg-white/70 px-3 py-2">
+            <dt className="font-mono text-xs text-school-blue">操作</dt>
+            <dd>{game.controls}</dd>
+          </div>
+          <div className="pixel-frame-sm bg-white/70 px-3 py-2">
+            <dt className="font-mono text-xs text-school-blue">テーマ</dt>
+            <dd>{game.theme}</dd>
+          </div>
+        </dl>
         <div className="mt-5">
           <TagList tags={game.tags} />
         </div>
@@ -69,7 +90,7 @@ export function GameRoomCard({ game }: GameRoomCardProps) {
             className="pixel-button"
             href={game.url}
           >
-            このゲームで遊ぶ
+            プレイする
           </a>
         </div>
       </div>

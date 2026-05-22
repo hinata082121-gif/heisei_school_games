@@ -16,6 +16,10 @@ const heroVisuals: Record<RoomTheme, { className: string; label: string }> = {
     className: "lunch-counter",
     label: "給食室と配膳台をイメージしたヒーローエリア",
   },
+  desk: {
+    className: "desk-top",
+    label: "学校机と消しゴム落としをイメージしたヒーローエリア",
+  },
 };
 
 export function GameDetailHero({ game }: GameDetailHeroProps) {
@@ -27,13 +31,16 @@ export function GameDetailHero({ game }: GameDetailHeroProps) {
         <div className="chalkboard pixel-frame p-5 sm:p-8">
           <div className="flex flex-wrap items-center gap-3">
             <p className="font-mono text-sm font-black text-school-yellow">
-              {game.areaName}
+              第{game.order}弾 / {game.areaName}
             </p>
             <StatusBadge status={game.status} />
           </div>
           <h1 className="chalk-text mt-4 text-4xl font-black leading-tight sm:text-5xl">
             {game.title}
           </h1>
+          <p className="mt-2 font-mono text-base font-black text-chalk/75">
+            {game.subtitle}
+          </p>
           <p className="chalk-text mt-4 text-xl font-bold leading-9 sm:text-2xl">
             {game.catchphrase}
           </p>
@@ -43,6 +50,20 @@ export function GameDetailHero({ game }: GameDetailHeroProps) {
           <div className="mt-6">
             <TagList tags={game.tags} />
           </div>
+          <dl className="mt-6 grid gap-2 text-sm font-bold text-ink sm:grid-cols-3">
+            <div className="pixel-frame-sm bg-paper px-3 py-2">
+              <dt className="font-mono text-xs text-school-blue">Play Time</dt>
+              <dd>{game.playTime}</dd>
+            </div>
+            <div className="pixel-frame-sm bg-paper px-3 py-2">
+              <dt className="font-mono text-xs text-school-blue">Control</dt>
+              <dd>{game.controls}</dd>
+            </div>
+            <div className="pixel-frame-sm bg-paper px-3 py-2">
+              <dt className="font-mono text-xs text-school-blue">Theme</dt>
+              <dd>{game.theme}</dd>
+            </div>
+          </dl>
           <div className="mt-7 grid gap-3 sm:flex">
             <a
               aria-label={`${game.title}を今すぐ遊ぶ。外部ゲームサイトへ移動します。`}
@@ -98,5 +119,9 @@ function detailLead(game: Game) {
     return "チャイムダッシュは、先生に見つからないように廊下を走り、チャイムまでに教室へ戻る平成学校あるあるブラウザゲームです。\nスマホで手軽に遊べる、16bit風の廊下ダッシュゲームです。";
   }
 
-  return "給食おかわり戦争は、人気給食メニューのおかわりをめぐってクラスメイトと争う、平成学校あるあるブラウザゲームです。\nカレー、揚げパン、プリンなど、懐かしい給食メニューをテーマにしたスマホ向けミニゲームです。";
+  if (game.slug === "kyusyoku-okawari") {
+    return "給食おかわり戦争は、人気給食メニューのおかわりをめぐってクラスメイトと争う、平成学校あるあるブラウザゲームです。\nカレー、揚げパン、プリンなど、懐かしい給食メニューをテーマにしたスマホ向けミニゲームです。";
+  }
+
+  return "机上決戦！消しゴム落としは、机の上で消しゴムを弾き、相手を机外へ落とす平成学校あるあるブラウザゲームです。\nスワイプだけで遊べる、スマホ向けの短時間物理アクションです。";
 }

@@ -1,13 +1,20 @@
-export type RoomTheme = "hallway" | "lunchroom";
+export type RoomTheme = "hallway" | "lunchroom" | "desk";
+
+export type GameSlug = "chime-dash" | "kyusyoku-okawari" | "eraser-battle";
 
 export type Game = {
-  id: "chime-dash" | "kyusyoku-okawari";
-  slug: "chime-dash" | "kyusyoku-okawari";
+  id: GameSlug;
+  slug: GameSlug;
+  order: 1 | 2 | 3;
   title: string;
+  subtitle: string;
   areaName: string;
   status: "公開中";
   catchphrase: string;
   description: string;
+  playTime: string;
+  controls: string;
+  theme: string;
   overview: string;
   howToPlay: string[];
   features: string[];
@@ -21,12 +28,17 @@ export const games: Game[] = [
   {
     id: "chime-dash",
     slug: "chime-dash",
+    order: 1,
     title: "チャイムダッシュ",
+    subtitle: "Chime Dash",
     areaName: "2階 廊下",
     status: "公開中",
     catchphrase: "チャイムが鳴る前に、教室へ帰れ。",
     description:
       "チャイムが鳴る前に教室へ戻れ！\n先生の視線をかいくぐる、平成学校あるある廊下ダッシュゲーム。",
+    playTime: "30秒〜60秒",
+    controls: "タップ",
+    theme: "平成の学校廊下",
     overview:
       "休み時間が終わる直前、チャイムが鳴る前に教室へ戻らなければいけない。\nでも、廊下には先生の視線がある。\n走りたいけど、見つかると怒られる。\nそんな平成の学校で一度は感じた小さな緊張感を、スマホで遊べるミニゲームにしました。",
     howToPlay: [
@@ -52,12 +64,17 @@ export const games: Game[] = [
   {
     id: "kyusyoku-okawari",
     slug: "kyusyoku-okawari",
+    order: 2,
     title: "給食おかわり戦争",
+    subtitle: "Kyusyoku Okawari",
     areaName: "給食室",
     status: "公開中",
     catchphrase: "最後の一個を、勝ち取れ。",
     description:
       "カレー、揚げパン、プリン。\n最後の一個をめぐる、平成給食バトル。",
+    playTime: "30秒〜90秒",
+    controls: "タップ",
+    theme: "平成の給食時間",
     overview:
       "給食の時間、人気メニューが余ったときに始まるおかわり争奪戦。\n最後の一個をめぐって、クラスメイトたちと勝負する。\nそんな平成の教室で起きた小さな事件を、タイミングタップとじゃんけん要素のあるミニゲームとして再現しました。",
     howToPlay: [
@@ -81,8 +98,52 @@ export const games: Game[] = [
     url: "https://kyusyoku-okawari.vercel.app/",
     roomTheme: "lunchroom",
   },
+  {
+    id: "eraser-battle",
+    slug: "eraser-battle",
+    order: 3,
+    title: "机上決戦！消しゴム落とし",
+    subtitle: "Eraser Battle",
+    areaName: "2-B 教室机",
+    status: "公開中",
+    catchphrase: "休み時間、机の上の天下を取れ！",
+    description:
+      "机の上で消しゴムを弾いて相手を落とす、平成の休み時間あるあるをテーマにしたスマホ向けブラウザゲーム。",
+    playTime: "30秒〜90秒",
+    controls: "スワイプ",
+    theme: "平成の学校机",
+    overview:
+      "「机上決戦！消しゴム落とし」は、平成の学校の休み時間に遊んだ消しゴム落としをモチーフにしたミニゲームです。\nスワイプで自分の消しゴムを弾き、相手の消しゴムを机の外へ落とせば勝利。\nギリギリで残る奇跡や、自分だけ落ちる自爆ショットなど、短時間で笑える勝負が楽しめます。",
+    howToPlay: [
+      "自分の消しゴムをタッチする",
+      "スワイプで方向と強さを決める",
+      "指を離してショットする",
+      "相手の消しゴムを机の外へ落とす",
+      "勝敗リザルトは称号と共有文つき",
+    ],
+    features: [
+      "平成の休み時間あるあるの消しゴム落とし",
+      "スマホで直感的に遊べるスワイプ操作",
+      "机上でぶつかる物理アクション",
+      "自爆やギリギリ生存が起きる短時間勝負",
+      "勝っても負けても楽しい称号つきリザルト",
+      "16bit風の学校机デザイン",
+    ],
+    productionNote:
+      "机上決戦！消しゴム落としは、「休み時間に机の上で消しゴムを弾いて遊ぶ」という学校あるあるから生まれました。\n操作はスワイプだけに絞り、スマホでも片手で短く遊べるテンポを重視しています。\n勝敗だけでなく、ギリギリ残ったときや勢い余って自分だけ落ちたときも笑えるように、リザルトの称号と共有文まで含めてシリーズ第三弾らしい体験にしています。",
+    tags: [
+      "第三弾",
+      "消しゴム落とし",
+      "休み時間",
+      "スワイプ操作",
+      "物理アクション",
+      "スマホ対応",
+    ],
+    url: "https://keshigomu-battle.vercel.app/",
+    roomTheme: "desk",
+  },
 ];
 
-export function getGameBySlug(slug: Game["slug"]) {
+export function getGameBySlug(slug: GameSlug) {
   return games.find((game) => game.slug === slug);
 }

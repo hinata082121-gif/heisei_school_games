@@ -14,6 +14,7 @@
 - [ ] /games
 - [ ] /games/chime-dash
 - [ ] /games/kyusyoku-okawari
+- [ ] /games/eraser-battle
 - [ ] /guides
 - [ ] /blog
 - [ ] /social
@@ -46,6 +47,7 @@
 
 - [ ] https://chimedash.vercel.app/ に遷移できる
 - [ ] https://kyusyoku-okawari.vercel.app/ に遷移できる
+- [ ] https://keshigomu-battle.vercel.app/ に遷移できる
 - [ ] SNS URL未設定時に空リンクが出ない
 - [ ] 外部リンクに適切な aria-label がある
 

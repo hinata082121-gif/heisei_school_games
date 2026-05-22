@@ -10,6 +10,7 @@
 - `/games`
 - `/games/chime-dash`
 - `/games/kyusyoku-okawari`
+- `/games/eraser-battle`
 - `/guides`
 - `/blog`
 - `/social`
@@ -25,6 +26,9 @@
 
 - 給食おかわり戦争  
   https://kyusyoku-okawari.vercel.app/
+
+- 机上決戦！消しゴム落とし  
+  https://keshigomu-battle.vercel.app/
 
 ## 技術構成
 

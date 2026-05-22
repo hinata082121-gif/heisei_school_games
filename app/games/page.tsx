@@ -8,16 +8,16 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "ゲーム一覧｜平成学校ゲームズ",
   description:
-    "平成学校ゲームズで遊べる、平成の学校あるあるをテーマにしたスマホ向け16bit風ブラウザゲームの一覧です。",
+    "廊下ダッシュ、給食おかわり争奪戦、消しゴム落としなど、平成学校ゲームズで遊べるスマホ向け16bit風ブラウザゲームの一覧です。",
   path: "/games",
 });
 
 const upcomingThemes = [
-  "休み時間バトル",
   "掃除当番ミッション",
   "放課後寄り道ゲーム",
   "席替え運命ルーレット",
   "テスト前あるあるゲーム",
+  "校庭ドッジ回避ゲーム",
 ];
 
 export default function GamesPage() {
@@ -33,7 +33,7 @@ export default function GamesPage() {
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-8 sm:text-lg">
             平成学校ゲームズで遊べる、学校あるあるミニゲームの一覧です。
-            廊下、給食、休み時間、放課後など、あの頃の小さな事件をスマホで遊べる16bit風ゲームにしています。
+            廊下、給食、消しゴム落とし、放課後など、あの頃の小さな事件をスマホで遊べる16bit風ゲームにしています。
           </p>
         </div>
       </section>
@@ -41,7 +41,7 @@ export default function GamesPage() {
       <section className="px-4 py-4 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <SchoolNoticeBanner
-            description="廊下、給食室、これから増える教室。気になる学校あるあるゲームを選んで遊んでください。"
+            description="廊下、給食室、2-Bの教室机。気になる学校あるあるゲームを選んで遊んでください。"
             href="/guides"
             linkLabel="攻略・遊び方を見る"
             title="どの教室から入る？"

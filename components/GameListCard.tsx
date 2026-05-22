@@ -10,6 +10,7 @@ type GameListCardProps = {
 const roomClasses: Record<RoomTheme, string> = {
   hallway: "hallway-floor",
   lunchroom: "lunch-counter",
+  desk: "desk-top",
 };
 
 export function GameListCard({ game }: GameListCardProps) {
@@ -21,8 +22,8 @@ export function GameListCard({ game }: GameListCardProps) {
             <span className="pixel-frame-sm bg-paper px-3 py-2 text-sm font-black">
               {game.areaName}
             </span>
-            <span className="border-2 border-ink bg-board px-2 py-1 font-mono text-xs font-bold text-chalk">
-              16BIT
+            <span className="border-2 border-ink bg-board px-2 py-1 font-mono text-xs font-bold text-chalk shadow-pixel-sm">
+              第{game.order}弾
             </span>
           </div>
           <div className="grid grid-cols-4 gap-2" aria-hidden="true">
@@ -37,16 +38,33 @@ export function GameListCard({ game }: GameListCardProps) {
       <div className="p-5 sm:p-6">
         <div className="flex flex-wrap items-center gap-3">
           <p className="font-mono text-sm font-black text-school-blue">
-            {game.areaName}
+            第{game.order}弾 / {game.areaName}
           </p>
           <StatusBadge status={game.status} />
         </div>
         <h2 className="mt-3 text-2xl font-black leading-tight sm:text-3xl">
           {game.title}
         </h2>
+        <p className="mt-1 font-mono text-sm font-black text-ink/70">
+          {game.subtitle}
+        </p>
         <p className="mt-4 whitespace-pre-line text-base leading-8">
           {game.description}
         </p>
+        <dl className="mt-5 grid gap-2 text-sm font-bold sm:grid-cols-3">
+          <div className="pixel-frame-sm bg-white/70 px-3 py-2">
+            <dt className="font-mono text-xs text-school-blue">Play Time</dt>
+            <dd>プレイ時間：{game.playTime}</dd>
+          </div>
+          <div className="pixel-frame-sm bg-white/70 px-3 py-2">
+            <dt className="font-mono text-xs text-school-blue">Control</dt>
+            <dd>操作：{game.controls}</dd>
+          </div>
+          <div className="pixel-frame-sm bg-white/70 px-3 py-2">
+            <dt className="font-mono text-xs text-school-blue">Theme</dt>
+            <dd>{game.theme}</dd>
+          </div>
+        </dl>
         <div className="mt-5">
           <TagList tags={game.tags} />
         </div>
@@ -62,7 +80,7 @@ export function GameListCard({ game }: GameListCardProps) {
             className="pixel-button"
             href={game.url}
           >
-            今すぐ遊ぶ
+            プレイする
           </a>
         </div>
       </div>

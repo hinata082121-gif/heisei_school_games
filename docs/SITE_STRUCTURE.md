@@ -35,6 +35,13 @@ https://chimedash.vercel.app/
 外部ゲームURL：
 https://kyusyoku-okawari.vercel.app/
 
+### /games/eraser-battle
+
+机上決戦！消しゴム落とし紹介ページ。
+
+外部ゲームURL：
+https://keshigomu-battle.vercel.app/
+
 ### /guides
 
 攻略・遊び方一覧。

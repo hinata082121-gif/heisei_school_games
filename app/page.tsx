@@ -12,7 +12,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "平成学校ゲームズ｜平成の学校あるあるを16bitブラウザゲームに",
   description:
-    "平成学校ゲームズは、チャイム、給食、廊下、先生など平成時代の学校あるあるをテーマにしたスマホ向け16bit風ブラウザゲームシリーズです。",
+    "平成学校ゲームズは、廊下ダッシュ、給食おかわり争奪戦、消しゴム落としなど平成時代の学校あるあるをテーマにしたスマホ向け16bit風ブラウザゲームシリーズです。",
   path: "/",
 });
 

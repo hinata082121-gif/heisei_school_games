@@ -76,6 +76,15 @@ body {
       repeating-linear-gradient(90deg, #d8dee3 0 28px, #b7c1c8 28px 30px);
   }
 
+  .desk-top {
+    background:
+      radial-gradient(circle at 20% 28%, rgba(40, 35, 29, 0.18) 0 1px, transparent 2px),
+      radial-gradient(circle at 73% 62%, rgba(40, 35, 29, 0.14) 0 1px, transparent 2px),
+      linear-gradient(90deg, rgba(255, 249, 232, 0.18) 0 2px, transparent 2px 100%),
+      repeating-linear-gradient(8deg, #c98d50 0 14px, #b9773d 14px 16px, #d3a064 16px 32px);
+    background-size: 48px 48px, 42px 42px, 34px 34px, auto;
+  }
+
   .bulletin-board {
     background:
       linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),

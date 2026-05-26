@@ -8,7 +8,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "攻略・遊び方｜平成学校ゲームズ",
   description:
-    "平成学校ゲームズの遊び方や攻略のコツをまとめたページです。チャイムダッシュ、給食おかわり戦争など、スマホ向け16bit風ブラウザゲームの遊び方を紹介します。",
+    "平成学校ゲームズの遊び方や攻略のコツをまとめたページです。チャイムダッシュ、給食おかわり戦争、消しゴム落としなど、スマホ向け16bit風ブラウザゲームの遊び方を紹介します。",
   path: "/guides",
 });
 
@@ -22,6 +22,16 @@ const gameLinks = [
     href: "/games/kyusyoku-okawari",
     title: "給食おかわり戦争紹介ページ",
     description: "給食室のおかわりバトルを見る",
+  },
+  {
+    href: "/games/eraser-battle",
+    title: "机上決戦！消しゴム落とし紹介ページ",
+    description: "休み時間の机上バトルを見る",
+  },
+  {
+    href: "/guides/heisei-school-games-about",
+    title: "平成学校ゲームズとは",
+    description: "シリーズ全体の方針を読む",
   },
 ];
 
@@ -38,7 +48,7 @@ export default function GuidesPage() {
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-8 sm:text-lg">
             平成学校ゲームズの遊び方や攻略のコツをまとめたページです。
-            初めて遊ぶ人でも迷わないように、操作方法やクリアのポイントを紹介しています。
+            初めて遊ぶ人でも迷わないように、操作方法、クリアのポイント、スコアや称号の楽しみ方を紹介しています。
           </p>
         </div>
       </section>

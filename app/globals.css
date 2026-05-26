@@ -85,6 +85,15 @@ body {
     background-size: 48px 48px, 42px 42px, 34px 34px, auto;
   }
 
+  .blackboard-cleaner {
+    background:
+      radial-gradient(circle at 26% 30%, rgba(255, 255, 255, 0.18) 0 1px, transparent 2px),
+      radial-gradient(circle at 68% 58%, rgba(255, 255, 255, 0.16) 0 1px, transparent 2px),
+      linear-gradient(90deg, rgba(255, 249, 232, 0.28) 0 10px, transparent 10px 100%),
+      linear-gradient(180deg, #214b41 0%, #173d34 66%, #8a5c36 66%, #6f4729 100%);
+    background-size: 36px 36px, 42px 42px, 46px 46px, auto;
+  }
+
   .bulletin-board {
     background:
       linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),

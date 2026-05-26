@@ -20,6 +20,10 @@ const heroVisuals: Record<RoomTheme, { className: string; label: string }> = {
     className: "desk-top",
     label: "学校机と消しゴム落としをイメージしたヒーローエリア",
   },
+  blackboard: {
+    className: "blackboard-cleaner",
+    label: "黒板前と黒板消しをイメージしたヒーローエリア",
+  },
 };
 
 export function GameDetailHero({ game }: GameDetailHeroProps) {
@@ -121,6 +125,10 @@ function detailLead(game: Game) {
 
   if (game.slug === "kyusyoku-okawari") {
     return "給食おかわり戦争は、人気給食メニューのおかわりをめぐってクラスメイトと争う、平成学校あるあるブラウザゲームです。\nカレー、揚げパン、プリンなど、懐かしい給食メニューをテーマにしたスマホ向けミニゲームです。";
+  }
+
+  if (game.slug === "kokuban-cleaner") {
+    return "黒板消しパタパタ選手権は、日直として黒板消しのチョーク粉を落とす平成学校あるあるブラウザゲームです。\n連打しすぎると粉が舞う、30秒のスマホ向けタイミングゲームです。";
   }
 
   return "机上決戦！消しゴム落としは、机の上で消しゴムを弾き、相手を机外へ落とす平成学校あるあるブラウザゲームです。\nスワイプだけで遊べる、スマホ向けの短時間物理アクションです。";

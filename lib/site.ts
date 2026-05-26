@@ -7,6 +7,8 @@ export const defaultTitle =
 
 export const defaultDescription = siteConfig.siteDescription;
 
+export const contactUrl = siteConfig.contactUrl;
+
 export function getSiteUrl() {
   return siteConfig.siteUrl;
 }

@@ -25,6 +25,7 @@ const allowedExactPaths = new Set([
 const allowedPathPrefixes = ["/guides/", "/blog/"];
 
 const deniedExactPaths = new Set([
+  "/ads-policy",
   "/privacy",
   "/terms",
   "/contact",
@@ -35,6 +36,7 @@ const deniedExactPaths = new Set([
 ]);
 
 const deniedPathPrefixes = [
+  "/ads-policy/",
   "/play/",
   "/privacy/",
   "/terms/",

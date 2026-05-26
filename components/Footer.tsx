@@ -2,16 +2,18 @@ import Link from "next/link";
 import { SocialLinks } from "@/components/SocialLinks";
 
 const footerLinks = [
-  { href: "/games", label: "Games" },
-  { href: "/guides", label: "Guides" },
-  { href: "/blog", label: "Blog" },
+  { href: "/", label: "トップ" },
+  { href: "/games", label: "ゲーム一覧" },
+  { href: "/guides", label: "遊び方・攻略" },
+  { href: "/blog", label: "開発ログ" },
   { href: "/social", label: "SNS" },
   { href: "/faq", label: "FAQ" },
-  { href: "/updates", label: "Updates" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-  { href: "/privacy", label: "Privacy" },
-  { href: "/terms", label: "Terms" },
+  { href: "/updates", label: "更新情報" },
+  { href: "/about", label: "運営者情報" },
+  { href: "/ads-policy", label: "広告掲載方針" },
+  { href: "/contact", label: "お問い合わせ" },
+  { href: "/privacy", label: "プライバシーポリシー" },
+  { href: "/terms", label: "利用規約" },
 ];
 
 export function Footer() {

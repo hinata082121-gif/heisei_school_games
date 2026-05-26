@@ -49,9 +49,9 @@ export default async function GuideArticlePage({ params }: GuidePageProps) {
     notFound();
   }
 
-  const game = getGameBySlug(guide.gameSlug);
+  const game = guide.gameSlug ? getGameBySlug(guide.gameSlug) : undefined;
 
-  if (!game) {
+  if (guide.gameSlug && !game) {
     notFound();
   }
 
@@ -74,11 +74,13 @@ export default async function GuideArticlePage({ params }: GuidePageProps) {
 
       <AdSlot position="article-bottom" />
 
-      <PlayCtaPanel
-        gameSlug={game.slug}
-        gameTitle={game.title}
-        gameUrl={game.url}
-      />
+      {game ? (
+        <PlayCtaPanel
+          gameSlug={game.slug}
+          gameTitle={game.title}
+          gameUrl={game.url}
+        />
+      ) : null}
 
       <SharePanel
         hashtags={["平成学校ゲームズ", guide.gameTitle]}
@@ -88,11 +90,21 @@ export default async function GuideArticlePage({ params }: GuidePageProps) {
 
       <InternalLinkPanel
         links={[
-          {
-            href: `/games/${game.slug}`,
-            label: "ゲーム紹介を見る",
-            description: `${game.title}の概要を確認する`,
-          },
+          ...(game
+            ? [
+                {
+                  href: `/games/${game.slug}`,
+                  label: "ゲーム紹介を見る",
+                  description: `${game.title}の概要を確認する`,
+                },
+              ]
+            : [
+                {
+                  href: "/games",
+                  label: "ゲーム一覧を見る",
+                  description: "公開中の平成学校ゲームズを確認する",
+                },
+              ]),
           {
             href: "/guides",
             label: "攻略・遊び方を見る",

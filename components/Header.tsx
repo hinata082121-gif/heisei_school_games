@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 const navItems = [
-  { href: "/games", label: "ゲーム" },
-  { href: "/guides", label: "攻略" },
-  { href: "/blog", label: "ブログ" },
-  { href: "/social", label: "SNS" },
-  { href: "/about", label: "About" },
+  { href: "/", label: "トップ" },
+  { href: "/games", label: "ゲーム一覧" },
+  { href: "/guides", label: "遊び方・攻略" },
+  { href: "/about", label: "平成学校ゲームズとは" },
+  { href: "/contact", label: "お問い合わせ" },
 ];
 
 export function Header() {

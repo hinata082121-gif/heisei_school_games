@@ -12,9 +12,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
     default: defaultTitle,
-    template: "%s",
+    template: "%s | 平成学校ゲームズ",
   },
   description: defaultDescription,
+  applicationName: siteName,
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: defaultTitle,
     description: defaultDescription,

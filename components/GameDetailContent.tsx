@@ -47,6 +47,21 @@ export function GameDetailContent({
           </ol>
         </section>
 
+        {game.winCondition ? (
+          <section className="pixel-frame bg-paper p-5 sm:p-7">
+            <SectionHeading eyebrow="Rules" title="勝敗条件" />
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {game.winCondition.map((item, index) => (
+                <FeatureCard
+                  index={index + 1}
+                  key={item}
+                  text={item}
+                />
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
         <section className="pixel-frame bg-paper p-5 sm:p-7">
           <SectionHeading
             eyebrow="Feature"
@@ -62,6 +77,45 @@ export function GameDetailContent({
             ))}
           </ul>
         </section>
+
+        {game.tips ? (
+          <section className="notebook-panel pixel-frame p-5 sm:p-7">
+            <SectionHeading eyebrow="Tips" title="攻略のコツ" />
+            <ul className="grid gap-3">
+              {game.tips.map((tip, index) => (
+                <li
+                  className="pixel-frame-sm bg-paper px-4 py-3 font-bold leading-7"
+                  key={tip}
+                >
+                  {index + 1}. {tip}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
+        {game.shareFeatures || game.deviceSupport ? (
+          <section className="pixel-frame bg-paper p-5 sm:p-7">
+            <SectionHeading eyebrow="Share / Device" title="共有と対応端末" />
+            {game.deviceSupport ? (
+              <p className="text-base leading-8 text-ink/80 sm:text-lg">
+                {game.deviceSupport}
+              </p>
+            ) : null}
+            {game.shareFeatures ? (
+              <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+                {game.shareFeatures.map((feature) => (
+                  <li
+                    className="pixel-frame-sm bg-school-yellow/45 px-4 py-3 font-bold leading-7"
+                    key={feature}
+                  >
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </section>
+        ) : null}
 
         <section className="chalkboard pixel-frame p-5 sm:p-7">
           <SectionHeading eyebrow="Production Note" inverted title="制作メモ" />
@@ -136,6 +190,10 @@ function getGameShareText(game: Game) {
 
   if (game.slug === "kyusyoku-okawari") {
     return "平成の給食あるある「最後の一個をめぐるおかわり勝負」を16bit風ゲームにした給食おかわり戦争を遊んでみた。";
+  }
+
+  if (game.slug === "kokuban-cleaner") {
+    return "平成の学校あるある「黒板消しパタパタ」を30秒のタイミングゲームにした黒板消しパタパタ選手権を遊んでみた。";
   }
 
   return "平成の休み時間あるある「机の上の消しゴム落とし」を16bit風ゲームにした机上決戦！消しゴム落としを遊んでみた。";

@@ -19,6 +19,10 @@ const roomVisuals: Record<RoomTheme, { base: string; label: string }> = {
     base: "desk-top",
     label: "学校机と消しゴム落としをイメージしたエリア",
   },
+  blackboard: {
+    base: "blackboard-cleaner",
+    label: "黒板前と黒板消しをイメージしたエリア",
+  },
 };
 
 export function GameRoomCard({ game }: GameRoomCardProps) {

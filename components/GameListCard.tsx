@@ -11,6 +11,7 @@ const roomClasses: Record<RoomTheme, string> = {
   hallway: "hallway-floor",
   lunchroom: "lunch-counter",
   desk: "desk-top",
+  blackboard: "blackboard-cleaner",
 };
 
 export function GameListCard({ game }: GameListCardProps) {

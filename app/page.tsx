@@ -77,12 +77,18 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <div className="grid gap-3 sm:flex lg:grid lg:min-w-72">
+          <div className="grid gap-3 sm:grid-cols-2 lg:min-w-72 lg:grid-cols-1">
             <Link className="pixel-button" href="/guides">
               攻略・遊び方を見る
             </Link>
             <Link className="pixel-button pixel-button-secondary" href="/blog">
               開発ログ・ブログを見る
+            </Link>
+            <Link className="pixel-button pixel-button-secondary" href="/faq">
+              よくある質問
+            </Link>
+            <Link className="pixel-button pixel-button-secondary" href="/updates">
+              更新情報
             </Link>
           </div>
         </div>

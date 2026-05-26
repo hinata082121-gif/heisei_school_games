@@ -34,6 +34,21 @@ export default function AboutPage() {
             href: "/blog",
             description: "制作メモや平成学校あるあるの記事をまとめています。",
           },
+          {
+            label: "よくある質問",
+            href: "/faq",
+            description: "遊び方、対応端末、広告方針を確認できます。",
+          },
+          {
+            label: "更新情報",
+            href: "/updates",
+            description: "公式サイトの公開情報と更新履歴をまとめています。",
+          },
+          {
+            label: "SNSで見る",
+            href: "/social",
+            description: "ショート動画や制作状況の発信予定を確認できます。",
+          },
         ]}
       />
     </PageContainer>

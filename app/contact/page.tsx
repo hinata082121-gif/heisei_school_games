@@ -18,12 +18,18 @@ export default function ContactPage() {
       <p>
         公式SNSや今後設置予定のフォームから連絡できるようにする予定です。個人情報の取り扱いについては、プライバシーポリシーをご確認ください。
       </p>
+      <p>
+        お問い合わせ前に、よくある質問もあわせてご確認ください。
+      </p>
       <div className="grid gap-3 sm:grid-cols-2">
         <Link className="pixel-button pixel-button-secondary" href="/privacy">
           Privacy Policy
         </Link>
         <Link className="pixel-button pixel-button-secondary" href="/terms">
           Terms
+        </Link>
+        <Link className="pixel-button pixel-button-secondary" href="/faq">
+          よくある質問を見る
         </Link>
       </div>
     </PageContainer>

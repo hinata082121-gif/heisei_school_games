@@ -19,6 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     createEntry(siteUrl, "/guides", "2026-05-20", "weekly", 0.8),
     createEntry(siteUrl, "/blog", "2026-05-20", "weekly", 0.8),
     createEntry(siteUrl, "/social", "2026-05-20", "monthly", 0.6),
+    createEntry(siteUrl, "/faq", "2026-05-20", "monthly", 0.6),
+    createEntry(siteUrl, "/updates", "2026-05-20", "monthly", 0.6),
   ];
 
   const gameRoutes = games.map((game) =>
